@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GiovanniTutorial")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e73de363737b08aa2168a4fdc4f3563376f3245")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7eb94d7e90fa68421c7bdbc789f2043de3105655")]
 [assembly: System.Reflection.AssemblyProductAttribute("GiovanniTutorial")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GiovanniTutorial")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
