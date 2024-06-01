@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Davide\\source\\repos\\ApprendimentoCorsiBlazor\\GiovanniTutorial\\GiovanniTutorial\\GiovanniTutorial.csproj": {}
+    "C:\\Users\\destr\\source\\repos\\esercizio1-api\\GiovanniTutorial\\GiovanniTutorial.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Davide\\source\\repos\\ApprendimentoCorsiBlazor\\GiovanniTutorial\\GiovanniTutorial\\GiovanniTutorial.csproj": {
+    "C:\\Users\\destr\\source\\repos\\esercizio1-api\\GiovanniTutorial\\GiovanniTutorial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Davide\\source\\repos\\ApprendimentoCorsiBlazor\\GiovanniTutorial\\GiovanniTutorial\\GiovanniTutorial.csproj",
+        "projectUniqueName": "C:\\Users\\destr\\source\\repos\\esercizio1-api\\GiovanniTutorial\\GiovanniTutorial.csproj",
         "projectName": "GiovanniTutorial",
-        "projectPath": "C:\\Users\\Davide\\source\\repos\\ApprendimentoCorsiBlazor\\GiovanniTutorial\\GiovanniTutorial\\GiovanniTutorial.csproj",
-        "packagesPath": "C:\\Users\\Davide\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Davide\\source\\repos\\ApprendimentoCorsiBlazor\\GiovanniTutorial\\GiovanniTutorial\\obj\\",
+        "projectPath": "C:\\Users\\destr\\source\\repos\\esercizio1-api\\GiovanniTutorial\\GiovanniTutorial.csproj",
+        "packagesPath": "C:\\Users\\destr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\destr\\source\\repos\\esercizio1-api\\GiovanniTutorial\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Davide\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\destr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,9 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/ml-progetti/_packaging/ml-progetti/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -40,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -70,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

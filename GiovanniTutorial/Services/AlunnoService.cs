@@ -6,23 +6,23 @@ namespace GiovanniTutorial.Services
 {
     public interface IAlunnoService
     {
-        public List<Alunno> getAlunnos();
+        public List<AlunnoEntity> getAlunnos();
 
-        public Alunno? getAlunno(string id);
+        public AlunnoEntity? getAlunno(string id);
 
     }
     public class AlunnoService : IAlunnoService
     {
-        List<Alunno> people = new List<Alunno>()
+        List<AlunnoEntity> people = new List<AlunnoEntity>()
             {
-                new Alunno("Giovanni","Destratis"),
-                new Alunno("Davide","Saiano"),
-                new Alunno("Giovanni","Martinelli")
+                new AlunnoEntity("Giovanni","Destratis"),
+                new AlunnoEntity("Davide","Saiano"),
+                new AlunnoEntity("Giovanni","Martinelli")
             };
 
-        public List<Alunno> getAlunnos() => people;
+        public List<AlunnoEntity> getAlunnos() => people;
 
-        public Alunno? getAlunno(string id) => people.FirstOrDefault(p => p.Id == id);
+        public AlunnoEntity? getAlunno(string id) => people.FirstOrDefault(p => p.Id == id);
 
     }
 }
