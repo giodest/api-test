@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GiovanniTutorial.Entity
 {
-    public class Alunno
+    public class AlunnoEntity
     {
-        public Alunno()
+        public AlunnoEntity()
         {
             
         }
-        public Alunno(string name, string lastName)
+        public AlunnoEntity(string name, string lastName)
         {
             Id = Guid.NewGuid().ToString();
             Name = name;
