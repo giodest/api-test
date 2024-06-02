@@ -8,7 +8,7 @@ namespace GiovanniTutorial.Services
 	{
 		public List<ClasseEntity> getClassi();
 
-		public ClasseEntity? getClassi(string id);
+		public ClasseEntity? getClasse(string id);
 
 	}
 	public class ClasseService : IClasseService

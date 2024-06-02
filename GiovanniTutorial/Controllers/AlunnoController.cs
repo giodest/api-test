@@ -1,4 +1,5 @@
-﻿using GiovanniTutorial.Services;
+﻿using GiovanniTutorial.Entity;
+using GiovanniTutorial.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,5 +30,19 @@ namespace GiovanniTutorial.Controllers
 
             return Ok(result);
         }
-    }
+
+		[HttpGet("GetAlunno{id}")]
+		[Produces("application/json")]
+		public async Task<IActionResult> Get(string id)    
+		{
+
+			var result = _AlunnoService.getAlunno(id);
+			//Validazione
+			//badrequest errore di inserimento dati
+			//notfound valore non trovato
+
+
+			return Ok(result);
+		
+	}
 }
