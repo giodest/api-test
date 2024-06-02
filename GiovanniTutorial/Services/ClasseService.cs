@@ -22,7 +22,7 @@ namespace GiovanniTutorial.Services
 
 		public List<ClasseEntity> getClassi() => classi;
 
-		public ClasseEntity? getClassi(string id) => classi.FirstOrDefault(p => p.Id == id);
+		public ClasseEntity? getClassi(string id) => classi.FirstOrDefault(c => c.Id == id);
 
 	}
 }
