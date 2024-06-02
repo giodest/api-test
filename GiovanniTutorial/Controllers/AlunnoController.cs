@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GiovanniTutorial.Controllers
 {
-    
+
     [Route("api/[controller]")]
     [ApiController]
     public class AlunnoController : Controller
@@ -26,23 +26,24 @@ namespace GiovanniTutorial.Controllers
             //Validazione
             //badrequest errore di inserimento dati
             //notfound valore non trovato
-            
+
 
             return Ok(result);
         }
 
-		[HttpGet("GetAlunno{id}")]
-		[Produces("application/json")]
-		public async Task<IActionResult> Get(string id)    
-		{
+        [HttpGet("GetAlunno{id}")]
+        [Produces("application/json")]
+        public async Task<IActionResult> Get(string id)
+        {
 
-			var result = _AlunnoService.getAlunno(id);
-			//Validazione
-			//badrequest errore di inserimento dati
-			//notfound valore non trovato
+            var result = _AlunnoService.getAlunno(id);
+            //Validazione
+            //badrequest errore di inserimento dati
+            //notfound valore non trovato
 
 
-			return Ok(result);
-		
-	}
+            return Ok(result);
+
+        }
+    }
 }
