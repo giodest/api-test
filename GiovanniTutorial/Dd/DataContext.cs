@@ -9,7 +9,7 @@ namespace GiovanniTutorial.Dd
 		public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
 		public DbSet<AlunnoEntity> Alunni {  get; set; }
-		public DbSet<ClasseEntity> Classe { get; set; }
+		public DbSet<ClasseEntity> Classi { get; set; }
 	}
 
 }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GiovanniTutorial.Controllers
 {
-
+	/*
 	[Route("api/[controller]")]
 	[ApiController]
 	public class ClasseController : Controller
@@ -22,6 +22,8 @@ namespace GiovanniTutorial.Controllers
 		{
 
 			var result = _ClasseService.getClassi();
+
+
 			//Validazione
 			//badrequest errore di inserimento dati
 			//notfound valore non trovato
@@ -30,4 +32,5 @@ namespace GiovanniTutorial.Controllers
 			return Ok(result);
 		}
 	}
+	*/
 }

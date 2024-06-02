@@ -4,6 +4,8 @@ using GiovanniTutorial.Entity;
 
 namespace GiovanniTutorial.Services
 {
+
+	/*
 	public interface IClasseService
 	{
 		public List<ClasseEntity> getClassi();
@@ -23,6 +25,7 @@ namespace GiovanniTutorial.Services
 		public List<ClasseEntity> getClassi() => classi;
 
 		public ClasseEntity? getClassi(string id) => classi.FirstOrDefault(c => c.Id == id);
+		
 
-	}
+	}*/
 }

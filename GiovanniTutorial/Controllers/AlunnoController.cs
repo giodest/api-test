@@ -6,11 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GiovanniTutorial.Controllers
 {
-
+	/*
     [Route("api/[controller]")]
     [ApiController]
     public class AlunnoController : Controller
     {
+		
         private readonly IAlunnoService _AlunnoService;
         public AlunnoController(IAlunnoService AlunnoService)
         {
@@ -44,6 +45,6 @@ namespace GiovanniTutorial.Controllers
 
             return Ok(result);
 
-        }
-    }
+        } 
+   }*/
 }
