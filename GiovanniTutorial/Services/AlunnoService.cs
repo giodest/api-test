@@ -1,6 +1,4 @@
-﻿
-
-using GiovanniTutorial.Entity;
+﻿using GiovanniTutorial.Entity;
 
 namespace GiovanniTutorial.Services
 {
