@@ -4,13 +4,13 @@
     {
 		List<AlunnoEntity> GetAllAlunni();
 
-		List<AlunnoEntity> GetSingleAlunno(string id);
+		AlunnoEntity? GetSingleAlunno(string id);
 
 		List<AlunnoEntity> AddAlunno(AlunnoEntity alunno);
 
-		List<AlunnoEntity> UpdateAlunno(string id, AlunnoEntity request);
+		List<AlunnoEntity>? UpdateAlunno(string id, AlunnoEntity request);
 
-		List<AlunnoEntity> DeleteAlunno(string id);
+		List<AlunnoEntity>? DeleteAlunno(string id);
 
 	}
 }

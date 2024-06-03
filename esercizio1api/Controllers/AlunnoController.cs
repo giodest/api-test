@@ -1,5 +1,6 @@
 ﻿using esercizio1api.Entity;
 using esercizio1api.Services;
+using esercizio1api.Services.AlunnoService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,74 +13,54 @@ namespace esercizio1api.Controllers
 
     public class AlunnoController : ControllerBase
     {
+        public IAlunnoService _alunnoService; 
 
-        //costruttore per testare l'API senza database
-        private static List<AlunnoEntity> alunni = new List<AlunnoEntity>
-            {
-                new AlunnoEntity
-                {   Id = "1",
-                    Name = "Giovanni",
-                    LastName = "Destratis",
-                    Anno = "5",
-                },
-
-                new AlunnoEntity
-                {   Id = "2",
-                    Name = "Mario",
-                    LastName = "Rossi",
-                    Anno = "4",
-                }
-            };
+		public AlunnoController(IAlunnoService alunnoService)
+        {
+			_alunnoService = alunnoService;
+		}
 
         //CRUD
 
         [HttpGet]
         public async Task<ActionResult<List<AlunnoEntity>>> GetAllAlunni()
         {
-
-            return Ok(alunni);
+            return _alunnoService.GetAllAlunni();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<List<AlunnoEntity>>> GetSingleAlunno(string id)
         {
-            var alunno = alunni.Find(x => x.Id == id);
-            if (alunno == null)
-            {
-                return NotFound("Sorry, this Alunno doesn't exist");
-            }
-            return Ok(alunno);
+            var result = _alunnoService.GetSingleAlunno(id);
+            if (result == null)
+				return NotFound("Sorry, this Alunno doesn't exist");
+			return Ok(result);
         }
 
         [HttpPost]
         public async Task<ActionResult<List<AlunnoEntity>>> AddAlunno(AlunnoEntity alunno)
         {
-            alunni.Add(alunno);
-            return Ok(alunni);
+            var result = _alunnoService.AddAlunno(alunno);
+            return Ok(result);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<List<AlunnoEntity>>> UpdateAlunno(string id, AlunnoEntity request)
         {
-            var alunno = alunni.Find(x => x.Id == id);
-            if (alunno == null)
-                return NotFound("Sorry, this Alunno doesn't exist");
-            alunno.Name = request.Name;
-            alunno.LastName = request.LastName;
-            alunno.Anno = request.Anno;
-
-            return Ok(alunni);
-        }
+			var result = _alunnoService.UpdateAlunno(id, request);
+			if (result == null)
+				return NotFound("Sorry, this Alunno doesn't exist");
+			return Ok(result);
+		}
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<List<AlunnoEntity>>> DeleteAlunno(string id) 
         {
-
-            var alunno = alunni.Find(x => x.Id == id);
-            if (alunno == null)
+            var result = _alunnoService.DeleteAlunno(id);
+            if (result == null)
                 return NotFound("Sorry, this Alunno doesn't exist");
-            alunni.Remove(alunno);
-            return Ok(alunni);
+            return Ok(result); 
+           
         
         }
 
