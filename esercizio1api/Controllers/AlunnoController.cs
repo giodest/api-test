@@ -72,7 +72,8 @@ namespace esercizio1api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<List<AlunnoEntity>>> DeleteAlunno(string id) {
+        public async Task<ActionResult<List<AlunnoEntity>>> DeleteAlunno(string id) 
+        {
 
             var alunno = alunni.Find(x => x.Id == id);
             if (alunno == null)
