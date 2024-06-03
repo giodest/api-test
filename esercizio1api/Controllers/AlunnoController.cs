@@ -58,7 +58,20 @@ namespace esercizio1api.Controllers
             return Ok(alunni);
         }
 
-    }   
+		[HttpPut("{id}")]
+		public async Task<ActionResult<List<AlunnoEntity>>> UpdateAlunno(string id, AlunnoEntity request)
+		{
+            var alunno = alunni.Find(x => x.Id ==id);
+            if (alunno == null)
+                return NotFound("Sorry, this Alunno doesn't exist");
+            alunno.Name = request.Name;
+			alunno.LastName = request.LastName;
+			alunno.Anno = request.Anno;
+
+			return Ok(alunni);
+		}
+
+	}   
      /*
     [Route("api/[controller]")]
     [ApiController]
