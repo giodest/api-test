@@ -1,7 +1,4 @@
-using GiovanniTutorial.Dd;
 using GiovanniTutorial.Services;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +10,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("dbConnection")));
 builder.Services.AddScoped<IAlunnoService, AlunnoService>();
 builder.Services.AddScoped<IClasseService, ClasseService>();
 
