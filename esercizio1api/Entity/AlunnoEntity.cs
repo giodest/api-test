@@ -27,6 +27,6 @@ namespace esercizio1api.Entity
         public string Name { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string? Anno { get; set; } = string.Empty;
-        public ClasseEntity? Classe { get; set; }
+        public ClasseEntity? Sezione { get; set; }
     }
 }

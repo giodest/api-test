@@ -3,9 +3,34 @@ using esercizio1api.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
 
 namespace esercizio1api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
+
+    public class AlunnoController : ControllerBase {
+
+        private static List<AlunnoEntity> alunni = new List<AlunnoEntity> 
+		    {
+				new AlunnoEntity
+				{   Id = "1",
+					Name = "Giovanni",
+					LastName = "Destratis",
+					Anno = "5",
+				}
+
+			};
+
+
+		[HttpGet]
+        public async Task<ActionResult<List<AlunnoEntity>>> GetAllAlunni() {
+
+                return Ok(alunni);
+            }
+         
+    }
 	/*
     [Route("api/[controller]")]
     [ApiController]
