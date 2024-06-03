@@ -52,24 +52,37 @@ namespace esercizio1api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunnox(AlunnoEntity alunno)
+        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunno(AlunnoEntity alunno)
         {
             alunni.Add(alunno);
             return Ok(alunni);
         }
 
-		[HttpPut("{id}")]
-		public async Task<ActionResult<List<AlunnoEntity>>> UpdateAlunno(string id, AlunnoEntity request)
-		{
-            var alunno = alunni.Find(x => x.Id ==id);
+        [HttpPut("{id}")]
+        public async Task<ActionResult<List<AlunnoEntity>>> UpdateAlunno(string id, AlunnoEntity request)
+        {
+            var alunno = alunni.Find(x => x.Id == id);
             if (alunno == null)
                 return NotFound("Sorry, this Alunno doesn't exist");
             alunno.Name = request.Name;
-			alunno.LastName = request.LastName;
-			alunno.Anno = request.Anno;
+            alunno.LastName = request.LastName;
+            alunno.Anno = request.Anno;
 
-			return Ok(alunni);
-		}
+            return Ok(alunni);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<List<AlunnoEntity>>> DeleteAlunno(string id) {
+
+            var alunno = alunni.Find(x => x.Id == id);
+            if (alunno == null)
+                return NotFound("Sorry, this Alunno doesn't exist");
+            alunni.Remove(alunno);
+            return Ok(alunni);
+        
+        }
+
+
 
 	}   
      /*
