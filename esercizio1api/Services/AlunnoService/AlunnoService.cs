@@ -23,9 +23,9 @@ namespace Services.AlunnoService
 					Anno = "4",
 				}
 			};
-		public List<AlunnoEntity> AddAlunno(AlunnoEntity alunno)
+		public List<AlunnoEntity> AddAlunno(AlunnoEntity request)
 		{
-			alunni.Add(alunno);
+			alunni.Add(request);
 			return alunni;
 		}
 

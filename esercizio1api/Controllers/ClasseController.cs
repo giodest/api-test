@@ -1,36 +1,68 @@
 ﻿using esercizio1api.Services;
+using esercizio1api.Services.AlunnoService;
+using esercizio1api.Services.ClasseService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Services.AlunnoService;
 
 namespace esercizio1api.Controllers
 {
-	/*
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ClasseController : Controller
+
+	public class ClasseController : ControllerBase 
 	{
-		private readonly IClasseService _ClasseService;
-		public ClasseController(IClasseService ClasseService)
+		//CONSTRUCTOR
+		public IClasseService _classeService;
+
+		public ClasseController(IClasseService classeService)
 		{
-			_ClasseService = ClasseService;
+			_classeService = classeService;
 		}
 
-		[HttpGet("GetClasse")]
-		[Produces("application/json")]
-		public async Task<IActionResult> Get()
+		//CRUD
+
+		[HttpGet]
+		public async Task<ActionResult<List<ClasseEntity>>> GetAllClassi()
 		{
+			return _classeService.GetAllClassi();
+		}
 
-			var result = _ClasseService.getClassi();
-
-
-			//Validazione
-			//badrequest errore di inserimento dati
-			//notfound valore non trovato
-
-
+		[HttpGet("{id}")]
+		public async Task<ActionResult<List<ClasseEntity>>> GetSingleClasse(string id)
+		{
+			var result = _classeService.GetSingleClasse(id);
+			if (result == null)
+				return NotFound("Sorry, this Classe doesn't exist");
 			return Ok(result);
 		}
+
+		[HttpPost]
+		public async Task<ActionResult<List<ClasseEntity>>> AddClasse(ClasseEntity classe)
+		{
+			var result = _classeService.AddClasse(classe);
+			return Ok(result);
+		}
+
+		[HttpPut("{id}")]
+		public async Task<ActionResult<List<ClasseEntity>>> UpdateClasse(string id, ClasseEntity request)
+		{
+			var result = _classeService.UpdateClasse(id, request);
+			if (result == null)
+				return NotFound("Sorry, this Classe doesn't exist");
+			return Ok(result);
+		}
+
+		[HttpDelete("{id}")]
+		public async Task<ActionResult<List<ClasseEntity>>> DeleteClasse(string id)
+		{
+			var result = _classeService.DeleteClasse(id);
+			if (result == null)
+				return NotFound("Sorry, this Classe doesn't exist");
+			return Ok(result);
+
+
+		}
 	}
-	*/
 }
