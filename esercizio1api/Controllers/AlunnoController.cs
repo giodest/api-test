@@ -12,6 +12,7 @@ namespace esercizio1api.Controllers
 
     public class AlunnoController : ControllerBase {
 
+        //costruttore per testare l'API senza database
         private static List<AlunnoEntity> alunni = new List<AlunnoEntity> 
 		    {
 				new AlunnoEntity
@@ -19,16 +20,29 @@ namespace esercizio1api.Controllers
 					Name = "Giovanni",
 					LastName = "Destratis",
 					Anno = "5",
-				}
+				},
 
+				new AlunnoEntity
+				{   Id = "2",
+					Name = "Mario",
+					LastName = "Rossi",
+					Anno = "4",
+				}
 			};
 
+        //CRUD
 
 		[HttpGet]
         public async Task<ActionResult<List<AlunnoEntity>>> GetAllAlunni() {
 
                 return Ok(alunni);
             }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<AlunnoEntity>>> GetSingleAlunno(string id) { 
+        var alunno = alunni.Find(x => x.Id == id);
+            return Ok(alunno);
+        }
          
     }
 	/*
