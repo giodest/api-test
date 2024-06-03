@@ -21,5 +21,5 @@ Studiare:
  Task:
  
  1)creare crud Alunno.
- 2)creare crud classe.
+ 2)creare crud Classe.
  3)creare associazione fra i due oggetti.
