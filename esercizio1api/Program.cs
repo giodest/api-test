@@ -1,5 +1,8 @@
 using esercizio1api.Dd;
-using esercizio1api.Services;
+using esercizio1api.Services.AlunnoService;
+using esercizio1api.Services.ClasseService;
+using Services.AlunnoService;
+using Services.ClasseService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,8 +18,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("dbConnection")));
 
-/*builder.Services.AddScoped<IAlunnoService, AlunnoService>();
-builder.Services.AddScoped<IClasseService, ClasseService>();*/
+builder.Services.AddScoped<IAlunnoService, AlunnoService>();
+builder.Services.AddScoped<IClasseService, ClasseService>();
 
 var app = builder.Build();
 

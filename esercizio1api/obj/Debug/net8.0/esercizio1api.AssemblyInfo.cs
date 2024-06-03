@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("esercizio1-api")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("esercizio1api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ba4a63b2ce4420403d93772b8acb8c89beddf21")]
-[assembly: System.Reflection.AssemblyProductAttribute("esercizio1-api")]
-[assembly: System.Reflection.AssemblyTitleAttribute("esercizio1-api")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c9d4b98d75aa8a57cb62a12c6203e73f1db8cde")]
+[assembly: System.Reflection.AssemblyProductAttribute("esercizio1api")]
+[assembly: System.Reflection.AssemblyTitleAttribute("esercizio1api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generato dalla classe WriteCodeFragment di MSBuild.
