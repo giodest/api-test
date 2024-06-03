@@ -52,7 +52,7 @@ namespace esercizio1api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunno(AlunnoEntity alunno)
+        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunnox(AlunnoEntity alunno)
         {
             alunni.Add(alunno);
             return Ok(alunni);
