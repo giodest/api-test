@@ -1,6 +1,7 @@
 ﻿global using esercizio1api.Entity;
 using esercizio1api.Dd;
 using esercizio1api.Services.AlunnoService;
+using Microsoft.EntityFrameworkCore;
 
 namespace Services.AlunnoService
 {
@@ -8,55 +9,67 @@ namespace Services.AlunnoService
 	{
 
 		//costruttore per testare l'API senza database
-		private static List<AlunnoEntity> alunni = new List<AlunnoEntity>
+		/* private static List<AlunnoEntity> alunni = new List<AlunnoEntity>
 			{
 				new AlunnoEntity
-				{   Id = "1",
+				{   AlunnoId = "1",
 					Name = "Giovanni",
 					LastName = "Destratis",
-					Anno = "5",
+					Anno = "5",									
 				},
 
 				new AlunnoEntity
-				{   Id = "2",
+				{   AlunnoId = "2",
 					Name = "Mario",
 					LastName = "Rossi",
 					Anno = "4",
 				}
-			};
-		
-		public List<AlunnoEntity> AddAlunno(AlunnoEntity alunno)
-		{
-			alunni.Add(alunno);
-			return alunni;
+			}; */
+
+		//Injecting datacontext to alunnoservice 
+
+		private readonly DataContext _context;
+
+		public AlunnoService(DataContext context)
+        {
+			_context = context;
 		}
 
-		public List<AlunnoEntity>? DeleteAlunno(string id)
+        public async Task<List<AlunnoEntity>> AddAlunno(AlunnoEntity alunno)
 		{
-			var alunno = alunni.Find(x => x.Id == id);
+			_context.Alunni.Add(alunno);
+			await _context.SaveChangesAsync();
+			return await _context.Alunni.ToListAsync();
+		}
+
+		public async Task<List<AlunnoEntity>>? DeleteAlunno(string id)
+		{
+			var alunno = await _context.Alunni.FindAsync(id);
 			if (alunno == null)
 				return null;
-			alunni.Remove(alunno);
+			_context.Alunni.Remove(alunno);
+			await _context.SaveChangesAsync();
+			return await _context.Alunni.ToListAsync();
+		}
+
+		public async Task<List<AlunnoEntity>> GetAllAlunni()
+		{
+			var alunni = await _context.Alunni.ToListAsync(); 
 			return alunni;
 		}
 
-		public List<AlunnoEntity> GetAllAlunni()
+		public async Task<AlunnoEntity> GetSingleAlunno(string id)
 		{
-			return alunni;
-		}
-
-		public AlunnoEntity GetSingleAlunno(string id)
-		{
-			var alunno = alunni.Find(a => a.Id == id);
+			var alunno = await _context.Alunni.FindAsync(id);
 			if (alunno == null)
 				return null;
 
 			return alunno;
 		}
 
-		public List<AlunnoEntity>? UpdateAlunno(string id, AlunnoEntity request)
+		public async Task<List<AlunnoEntity>>? UpdateAlunno(string id, AlunnoEntity request)
 		{
-			var alunno = alunni.Find(x => x.Id == id);
+			var alunno = await _context.Alunni.FindAsync(id);
 			if (alunno == null)
 				return null;
 
@@ -64,7 +77,8 @@ namespace Services.AlunnoService
 			alunno.LastName = request.LastName;
 			alunno.Anno = request.Anno;
 
-			return alunni;
+			await _context.SaveChangesAsync();
+			return await _context.Alunni.ToListAsync();
 		}
 	}
 }

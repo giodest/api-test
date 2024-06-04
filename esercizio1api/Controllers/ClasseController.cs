@@ -22,7 +22,6 @@ namespace esercizio1api.Controllers
 		}
 
 		//CRUD
-
 		[HttpGet]
 		public async Task<ActionResult<List<ClasseEntity>>> GetAllClassi()
 		{

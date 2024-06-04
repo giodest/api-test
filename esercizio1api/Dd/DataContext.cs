@@ -11,13 +11,4 @@ namespace esercizio1api.Dd
 		public DbSet<AlunnoEntity> Alunni {  get; set; }
 		public DbSet<ClasseEntity> Classi { get; set; }
 	}
-
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
-	{
-		modelBuilder.Entity<AlunnoEntity>()
-			.HasOne(a => a.Sezione)
-			.WithMany(c => c.Alunni)
-			.HasForeignKey(a => a.ClasseId);
-	}
-
 }

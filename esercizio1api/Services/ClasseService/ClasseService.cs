@@ -10,12 +10,12 @@ namespace Services.ClasseService
 		private static List<ClasseEntity> classi = new List<ClasseEntity>
 			{
 				new ClasseEntity
-				{   Id = "1",
+				{   ClasseId = "1",
 					Sezione = "A2"
 				},
 
 				new ClasseEntity
-				{   Id = "2",
+				{   ClasseId = "2",
 					Sezione = "B23"
 				}
 				
@@ -29,7 +29,7 @@ namespace Services.ClasseService
 
 		public List<ClasseEntity>? DeleteClasse(string id)
 		{
-			var classe = classi.Find(x => x.Id == id);
+			var classe = classi.Find(x => x.ClasseId == id);
 			if (classe == null)
 				return null;
 			classi.Remove(classe);
@@ -43,7 +43,7 @@ namespace Services.ClasseService
 
 		public ClasseEntity? GetSingleClasse(string id)
 		{
-			var classe = classi.Find(a => a.Id == id);
+			var classe = classi.Find(a => a.ClasseId == id);
 			if (classe == null)
 				return null;
 
@@ -52,7 +52,7 @@ namespace Services.ClasseService
 
 		public List<ClasseEntity>? UpdateClasse(string id, ClasseEntity request)
 		{
-			var classe = classi.Find(x => x.Id == id);
+			var classe = classi.Find(x => x.ClasseId == id);
 			if (classe == null)
 				return null;
 

@@ -2,11 +2,11 @@
 {
     public interface IAlunnoService
     {
-		List<AlunnoEntity> GetAllAlunni();
-		AlunnoEntity? GetSingleAlunno(string id);
-		List<AlunnoEntity> AddAlunno(AlunnoEntity classe);
-		List<AlunnoEntity>? UpdateAlunno(string id, AlunnoEntity request);
-		List<AlunnoEntity>? DeleteAlunno(string id);
+		Task<List<AlunnoEntity>> GetAllAlunni();
+		Task<AlunnoEntity>? GetSingleAlunno(string id);
+		Task<List<AlunnoEntity>> AddAlunno(AlunnoEntity classe);
+		Task<List<AlunnoEntity>>? UpdateAlunno(string id, AlunnoEntity request);
+		Task<List<AlunnoEntity>>? DeleteAlunno(string id);
 
 	}
 }

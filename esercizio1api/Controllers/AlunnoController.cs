@@ -22,11 +22,10 @@ namespace esercizio1api.Controllers
 		}
 
         //CRUD
-
         [HttpGet]
         public async Task<ActionResult<List<AlunnoEntity>>> GetAllAlunni()
         {
-            return _alunnoService.GetAllAlunni();
+            return await _alunnoService.GetAllAlunni();
         }
 
         [HttpGet("{id}")]
@@ -39,7 +38,7 @@ namespace esercizio1api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunno(AlunnoEntity alunno, ClasseEntity classe)
+        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunno(AlunnoEntity alunno)
         {
             var result = _alunnoService.AddAlunno(alunno);
             return Ok(result);
