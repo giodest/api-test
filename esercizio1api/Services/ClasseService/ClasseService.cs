@@ -7,7 +7,7 @@ namespace Services.ClasseService
 	public class ClasseService : IClasseService
 	{
 		//costruttore per testare l'API senza database
-		private static List<ClasseEntity> classi = new List<ClasseEntity>
+		/* private static List<ClasseEntity> classi = new List<ClasseEntity>
 			{
 				new ClasseEntity
 				{   ClasseId = "1",
@@ -19,7 +19,7 @@ namespace Services.ClasseService
 					Sezione = "B23"
 				}
 				
-		};
+		}; */
 
 		public List<ClasseEntity> AddClasse(ClasseEntity request)
 		{

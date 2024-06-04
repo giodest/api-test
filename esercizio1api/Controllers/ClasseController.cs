@@ -21,7 +21,7 @@ namespace esercizio1api.Controllers
 			_classeService = classeService;
 		}
 
-		//CRUD
+		//CRUD 
 		[HttpGet]
 		public async Task<ActionResult<List<ClasseEntity>>> GetAllClassi()
 		{
