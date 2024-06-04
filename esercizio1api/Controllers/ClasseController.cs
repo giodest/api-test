@@ -25,7 +25,7 @@ namespace esercizio1api.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<ClasseEntity>>> GetAllClassi()
 		{
-			return _classeService.GetAllClassi();
+			return await _classeService.GetAllClassi();
 		}
 
 		[HttpGet("{id}")]

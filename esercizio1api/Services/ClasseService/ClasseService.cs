@@ -1,6 +1,7 @@
 ﻿global using esercizio1api.Entity;
-using esercizio1api.Services;
+using esercizio1api.Dd;
 using esercizio1api.Services.ClasseService;
+using Microsoft.EntityFrameworkCore;
 
 namespace Services.ClasseService
 {
@@ -19,46 +20,57 @@ namespace Services.ClasseService
 					Sezione = "B23"
 				}
 				
-		}; */
+	       }; */
 
-		public List<ClasseEntity> AddClasse(ClasseEntity request)
+		private readonly DataContext _context;
+
+        public ClasseService (DataContext context)
+        {
+			_context = context;
+        }
+
+        public async Task<List<ClasseEntity>> AddClasse(ClasseEntity request)
 		{
-			classi.Add(request);
-			return classi;
+			_context.Classi.Add(request);
+			await _context.SaveChangesAsync();
+			return await _context.Classi.ToListAsync();
 		}
 
-		public List<ClasseEntity>? DeleteClasse(string id)
+		public async Task<List<ClasseEntity>>? DeleteClasse(string id)
 		{
-			var classe = classi.Find(x => x.ClasseId == id);
+			var classe = await _context.Classi.FindAsync(id);
 			if (classe == null)
 				return null;
-			classi.Remove(classe);
+			_context.Classi.Remove(classe);
+			await _context.SaveChangesAsync();
+			return await _context.Classi.ToListAsync();
+		}
+
+		public async Task<List<ClasseEntity>> GetAllClassi()
+		{
+			var classi = await _context.Classi.ToListAsync();
 			return classi;
 		}
 
-		public List<ClasseEntity> GetAllClassi()
+		public async Task<ClasseEntity>? GetSingleClasse(string id)
 		{
-			return classi;
-		}
-
-		public ClasseEntity? GetSingleClasse(string id)
-		{
-			var classe = classi.Find(a => a.ClasseId == id);
+			var classe = await _context.Classi.FindAsync(id);
 			if (classe == null)
 				return null;
 
 			return classe;
 		}
 
-		public List<ClasseEntity>? UpdateClasse(string id, ClasseEntity request)
+		public async Task<List<ClasseEntity>>? UpdateClasse(string id, ClasseEntity request)
 		{
-			var classe = classi.Find(x => x.ClasseId == id);
+			var classe = await _context.Classi.FindAsync(id);
 			if (classe == null)
 				return null;
 
 			classe.Sezione = request.Sezione;
 			
-			return classi;
+			await _context.SaveChangesAsync();
+			return await _context.Classi.ToListAsync();
 		}
 	}
 }

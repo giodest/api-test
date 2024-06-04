@@ -2,10 +2,10 @@
 {
     public interface IClasseService
 {
-		List<ClasseEntity> GetAllClassi();
-		ClasseEntity? GetSingleClasse(string id);
-		List<ClasseEntity> AddClasse(ClasseEntity request);
-		List<ClasseEntity>? UpdateClasse(string id, ClasseEntity request);
-		List<ClasseEntity>? DeleteClasse(string id);
+		Task<List<ClasseEntity>> GetAllClassi();
+		Task<ClasseEntity>? GetSingleClasse(string id);
+		Task<List<ClasseEntity>> AddClasse(ClasseEntity request);
+		Task<List<ClasseEntity>>? UpdateClasse(string id, ClasseEntity request);
+		Task<List<ClasseEntity>>? DeleteClasse(string id);
 }
 }
