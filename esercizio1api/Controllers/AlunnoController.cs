@@ -13,7 +13,7 @@ namespace esercizio1api.Controllers
 
     public class AlunnoController : ControllerBase
     {
-        //CONSTRUCTOR
+        //ALUNNO CONSTRUCTOR
         public IAlunnoService _alunnoService; 
 
 		public AlunnoController(IAlunnoService alunnoService)
@@ -39,7 +39,7 @@ namespace esercizio1api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunno(AlunnoEntity alunno)
+        public async Task<ActionResult<List<AlunnoEntity>>> AddAlunno(AlunnoEntity alunno, ClasseEntity classe)
         {
             var result = _alunnoService.AddAlunno(alunno);
             return Ok(result);
@@ -68,4 +68,5 @@ namespace esercizio1api.Controllers
 
 
 	}   
+
 }

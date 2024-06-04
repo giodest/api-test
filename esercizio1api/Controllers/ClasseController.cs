@@ -13,7 +13,7 @@ namespace esercizio1api.Controllers
 
 	public class ClasseController : ControllerBase 
 	{
-		//CONSTRUCTOR
+		//CLASSE CONSTRUCTOR
 		public IClasseService _classeService;
 
 		public ClasseController(IClasseService classeService)

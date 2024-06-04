@@ -1,6 +1,6 @@
 ﻿namespace esercizio1api.DTOs
 {
-	public class AlunnoCreationDTO
-	{
-	}
+	public record struct ClasseDTO(
+		string Sezione, 
+		List<AlunnoDTO> Alunni);
 }

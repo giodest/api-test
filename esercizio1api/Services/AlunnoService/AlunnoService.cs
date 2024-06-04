@@ -1,4 +1,5 @@
 ﻿global using esercizio1api.Entity;
+using esercizio1api.Dd;
 using esercizio1api.Services.AlunnoService;
 
 namespace Services.AlunnoService
@@ -23,9 +24,10 @@ namespace Services.AlunnoService
 					Anno = "4",
 				}
 			};
-		public List<AlunnoEntity> AddAlunno(AlunnoEntity request)
+		
+		public List<AlunnoEntity> AddAlunno(AlunnoEntity alunno)
 		{
-			alunni.Add(request);
+			alunni.Add(alunno);
 			return alunni;
 		}
 

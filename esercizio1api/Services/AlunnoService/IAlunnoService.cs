@@ -4,7 +4,7 @@
     {
 		List<AlunnoEntity> GetAllAlunni();
 		AlunnoEntity? GetSingleAlunno(string id);
-		List<AlunnoEntity> AddAlunno(AlunnoEntity request);
+		List<AlunnoEntity> AddAlunno(AlunnoEntity classe);
 		List<AlunnoEntity>? UpdateAlunno(string id, AlunnoEntity request);
 		List<AlunnoEntity>? DeleteAlunno(string id);
 
