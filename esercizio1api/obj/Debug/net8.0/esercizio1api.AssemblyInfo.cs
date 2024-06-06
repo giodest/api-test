@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("esercizio1api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efd53eeacf939f70cc0387329b095cd66d42050f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19b8a0ed72649496f7db760d4978752d96c7de0d")]
 [assembly: System.Reflection.AssemblyProductAttribute("esercizio1api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("esercizio1api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
