@@ -1,5 +1,6 @@
 ﻿global using esercizio1api.Entity;
 using esercizio1api.Dd;
+using esercizio1api.DTOs;
 using esercizio1api.Services.AlunnoService;
 using Microsoft.EntityFrameworkCore;
 

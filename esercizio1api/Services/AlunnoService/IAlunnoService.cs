@@ -1,4 +1,6 @@
-﻿namespace esercizio1api.Services.AlunnoService
+﻿using esercizio1api.DTOs;
+
+namespace esercizio1api.Services.AlunnoService
 {
     public interface IAlunnoService
     {

@@ -1,4 +1,5 @@
-﻿using esercizio1api.Entity;
+﻿using esercizio1api.DTOs;
+using esercizio1api.Entity;
 using esercizio1api.Services;
 using esercizio1api.Services.AlunnoService;
 using Microsoft.AspNetCore.Authorization;
@@ -29,7 +30,7 @@ namespace esercizio1api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<AlunnoEntity>>> GetSingleAlunno(string id)
+        public async Task<ActionResult<List<AlunnoDTO>>> GetSingleAlunno(string id)
         {
             var result = _alunnoService.GetSingleAlunno(id);
             if (result == null)

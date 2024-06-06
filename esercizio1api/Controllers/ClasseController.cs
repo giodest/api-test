@@ -1,4 +1,5 @@
-﻿using esercizio1api.Services;
+﻿using esercizio1api.DTOs;
+using esercizio1api.Services;
 using esercizio1api.Services.AlunnoService;
 using esercizio1api.Services.ClasseService;
 using Microsoft.AspNetCore.Authorization;
@@ -23,7 +24,7 @@ namespace esercizio1api.Controllers
 
 		//CRUD 
 		[HttpGet]
-		public async Task<ActionResult<List<ClasseEntity>>> GetAllClassi()
+		public async Task<ActionResult<List<ClasseDTO>>> GetAllClassi()
 		{
 			return await _classeService.GetAllClassi();
 		}

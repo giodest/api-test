@@ -1,5 +1,6 @@
 ﻿global using esercizio1api.Entity;
 using esercizio1api.Dd;
+using esercizio1api.DTOs;
 using esercizio1api.Services.ClasseService;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,9 +47,9 @@ namespace Services.ClasseService
 			return await _context.Classi.ToListAsync();
 		}
 
-		public async Task<List<ClasseEntity>> GetAllClassi()
+		public async Task<List<ClasseDTO>> GetAllClassi()
 		{
-			var classi = await _context.Classi.ToListAsync();
+			var classi = await _context.Classi.Include(x => x.Alunni).Select(y => new ClasseDTO(y)).ToListAsync();
 			return classi;
 		}
 
